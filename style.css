@@ -1,0 +1,287 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base */
+body {
+  font-family: Arial, sans-serif;
+  background: #89f3ca;
+  color: #111;
+  line-height: 1.6;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* Header */
+.header {
+  background: #4cebae;
+  border-bottom: 1px solid #e5e5e5;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  position: relative; /* Helps with absolute nav dropdown */
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #05130e;
+}
+
+/* Nav */
+.nav {
+  display: flex;
+  gap: 20px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+}
+
+.nav a:hover {
+  color: #dfe1e7;
+}
+
+/* Mobile Menu Button */
+.menu-btn {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #05130e;
+}
+
+/* Hero */
+.hero {
+  padding: 70px 0;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.hero-text h1 {
+  font-size: 44px;
+  margin-bottom: 15px;
+  text-transform: capitalize;
+}
+
+.hero-text p {
+  font-size: 16px;
+  margin-bottom: 22px;
+  color: #222;
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  background: #087c46;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background: #065f36;
+}
+
+/* Hero Card */
+.hero-card {
+  background: #ffffff;
+  padding: 22px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.hero-card h2 {
+  margin-bottom: 12px;
+  font-size: 20px;
+}
+
+.hero-card ul {
+  list-style: none;
+}
+
+.hero-card li {
+  margin: 10px 0;
+  font-size: 15px;
+}
+
+/* Footer */
+.footer {
+  background: #111;
+  color: #fff;
+  padding: 25px 0;
+  margin-top: 50px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.social-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.social-links a:hover {
+  text-decoration: underline;
+}
+
+/* Make all images responsive (future safe) */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===========================
+   RESPONSIVE (Task 4)
+   max-width: 768px
+   =========================== */
+@media (max-width: 768px) {
+  .container {
+    width: 92%;
+  }
+
+  /* Header */
+  .header-content {
+    padding: 14px 0;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  /* Hero layout stacks vertically */
+  .hero {
+    padding: 45px 0;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+  .hero-text p {
+    font-size: 14px;
+  }
+
+  /* Button becomes mobile-friendly */
+  .btn {
+    width: 100%;
+    max-width: 280px;
+    padding: 12px;
+  }
+
+  /* Card aligns nicely */
+  .hero-card {
+    text-align: left;
+  }
+
+  /* NAV: Hide links and show hamburger */
+  .nav {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    background: #ffffff;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 220px;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
+    z-index: 20;
+  }
+
+  .nav a {
+    padding: 8px 10px;
+    border-radius: 8px;
+  }
+
+  .nav a:hover {
+    background: #e9fff6;
+    color: #087c46;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  /* Footer stacks vertically */
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .social-links {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+/* ===========================
+   Extra Small Screens
+   max-width: 420px
+   =========================== */
+@media (max-width: 420px) {
+  .hero-text h1 {
+    font-size: 26px;
+  }
+
+  .hero-card {
+    padding: 18px;
+  }
+
+  .nav {
+    width: 100%;
+    right: 0;
+    left: 0;
+    border-radius: 0;
+    top: 62px;
+  }
+}
